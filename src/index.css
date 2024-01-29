@@ -39,16 +39,16 @@ div.pokedex {
 }
 
 .btn-horizontal {
-  top: 432px;
+  top: 349px;
 }
 
 .btn-up {
-  top: 389px;
+  top: 306px;
   left: 288px;
 }
 
 .btn-down {
-  top: 475px;
+  top: 392px;
   left: 248px;
 }
 
@@ -74,7 +74,26 @@ img {
 }
 
 .description {
-  padding: 5px;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.pokemon-name-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 127px;
+  height: 82px;
+  top: 423px;
+  left: 140px;
+}
+
+.pokemon-name-container p{
+  font: bolder 17px "Courier New", monospace;
+  text-align: center;
+  inline-size: 127px;
+  vertical-align: center;
+  overflow-wrap: break-word ;
 }
 
 /*

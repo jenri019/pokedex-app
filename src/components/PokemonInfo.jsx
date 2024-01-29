@@ -2,6 +2,7 @@ import React from 'react'
 import { useFetch } from '../hooks';
 import { PokemonImg } from './PokemonImg';
 import { PokemonDescription } from './PokemonDescription';
+import { PokemonName } from './PokemonName';
 
 export const PokemonInfo = ({idPokemon, visible}) => {
 
@@ -12,12 +13,15 @@ export const PokemonInfo = ({idPokemon, visible}) => {
   const { name, sprites, flavor_text } = !!data && data;
 
   return (
-    <div className="information-window">
-      {
-        (visible)
-        ? (<PokemonImg name={name} image={sprites}/>)
-        : (<PokemonDescription description={flavor_text}/>)
-      }
-    </div>
+    <>
+      <div className="information-window">
+        {
+          (visible)
+          ? (<PokemonImg name={name} image={sprites}/>)
+          : (<PokemonDescription description={flavor_text}/>)
+        }
+      </div>
+      <PokemonName name={name}/>
+    </>
   )
 }

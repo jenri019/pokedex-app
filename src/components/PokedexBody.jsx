@@ -1,5 +1,4 @@
 import React from 'react'
-import { PokemonImg } from './PokemonImg'
 import { useCounter, useVisible } from '../hooks';
 import { ButtonControl } from './ButtonControl';
 import { PokemonInfo } from './PokemonInfo';
@@ -15,18 +14,8 @@ export const PokedexBody = () => {
     }
 
     const getNextPokemon = () => {
-        if(counter == 10) return;
+        if(counter == 300) return;
         increment();
-    }
-
-    const setPokemonImage = () => {
-        if(visible) return;
-        changeVisibility();
-    }
-
-    const setPokemonDescription = () => {
-        if(!visible) return;
-        changeVisibility();
     }
 
     return (
@@ -36,8 +25,8 @@ export const PokedexBody = () => {
             <ButtonControl btnFunction={ getPreviousPokemon } btnPosition='btn-horizontal btn-left'/>
             <ButtonControl btnFunction={ getNextPokemon } btnPosition='btn-horizontal btn-right'/>
 
-            <ButtonControl btnFunction={ setPokemonImage } btnPosition='btn-vertical btn-up'/>
-            <ButtonControl btnFunction={ setPokemonDescription } btnPosition='btn-vertical btn-down'/>
+            <ButtonControl btnFunction={ changeVisibility } btnPosition='btn-vertical btn-up'/>
+            <ButtonControl btnFunction={ changeVisibility } btnPosition='btn-vertical btn-down'/>
         </div>
     )
 }
