@@ -1,6 +1,7 @@
 import React from 'react'
 import { PokemonImg } from './PokemonImg'
 import { useCounter } from '../hooks/useCounter';
+import { ButtonControl } from './ButtonControl';
 
 export const PokedexBody = () => {
     const {counter, increment, decrement} = useCounter(1);
@@ -8,8 +9,8 @@ export const PokedexBody = () => {
     return (
         <div className='pokedex'>
             <PokemonImg counter={counter}/>
-            <button onClick={() => decrement()} className='btn-change btn-left'></button>
-            <button onClick={() => increment()} className='btn-change btn-right'></button>
+            <ButtonControl btnFunction={decrement} btnPosition='btn-left' className='btn-change'/>
+            <ButtonControl btnFunction={increment} btnPosition='btn-right' className='btn-change'/>
         </div>
     )
 }
